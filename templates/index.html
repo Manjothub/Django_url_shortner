@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+          
+          <div class="hero-text">
+            <h2>WeURL — link shortener service</h2>
+            <p>Get a short link in one click. Also, you can have full statistics for all shorten URLs of yours.</p>
+            <form class="hero-form" method="POST" action="{% url 'urlshortner' %}">
+                {% csrf_token %}
+              <div class="hero-form-input">
+                <input class="hero-email-input" type="text", placeholder=" Paste long url and shorten it" name="url" required>
+                <button class="hero-form-submit" type="submit">Submit</button>
+              </div>        
+            </form>
+          </div>
+          
+          <div class="hero-image">
+            <!-- Image: undraw.co -->
+            <img src="https://assets.codepen.io/495197/undraw_Newsletter_re_wrob.svg" />
+          </div>
+          
+        </div>
+      </header>
+</body>
+</html>
